@@ -9,7 +9,7 @@
         <h3>{{post.title}}</h3>
         <span class="date">{{post.created|date:"SHORT_DATE_FORMAT"}}</span>
         <p>{{post.content|truncatewords:"20"}}</p>
-        <a href="/blog/{{post.id}}">Leer más</a>
+        <a href="{% url 'post' id=post.id %}">Leer más</a>
     </div>
 {%endfor%}
 {%endblock%}
