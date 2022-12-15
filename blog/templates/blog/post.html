@@ -7,6 +7,9 @@
     <h3>{{post.title}}</h3>
     <span class="date">{{post.created}}</span>
     <p>{{post.content}}</p>
+    {% if user.is_authenticated and user.is_superuser%}
+        <p><a class="edit" href="{% url 'admin:blog_post_change' post.id %}">Editar entrada</a></p>
+    {%endif%}
     <a href="{% url 'home' %}">Volver a la portada</a>
 </div>
 {%endblock%}
