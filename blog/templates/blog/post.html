@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{post.title}}</title>
-</head>
-<body>
-    <main>
-        <h1>Bienvenidos a mi blog</h1>
-        <h2>Archivo personal de mis entradasa</h2>
-        <p>Estas son las entradas mas recientes</p>
-        <h3>{{post.title}}</h3>
-        <span class="date">{{post.created}}</span>
-        <p>{{post.content}}</p>
-        <a href="/">Volver a la portada</a>
-    </main>
-</body>
-</html>
+{% extends "blog/base.html"%}
+
+{%block title%}{{post.title}}{%endblock%}
+
+{% block content%}
+<div>
+    <h3>{{post.title}}</h3>
+    <span class="date">{{post.created}}</span>
+    <p>{{post.content}}</p>
+    <a href="/">Volver a la portada</a>
+</div>
+{%endblock%}
